@@ -24,3 +24,4 @@ hs_err_pid*
 
 /bin/
 /res/calm3.wav
+*.wav
