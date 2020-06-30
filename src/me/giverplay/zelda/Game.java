@@ -103,7 +103,7 @@ public class Game extends Canvas implements Runnable
 	
 	private void setupFrame()
 	{
-		frame = new JFrame("Tec tec tec tec tec tec tec tec tec");
+		frame = new JFrame("Game 01 - Zelda Clone");
 		frame.add(this);
 		frame.setResizable(false);
 		frame.setUndecorated(false);
