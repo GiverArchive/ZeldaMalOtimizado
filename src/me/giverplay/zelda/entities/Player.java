@@ -212,8 +212,8 @@ public class Player extends Entity
 			Game.getGame().setState(GameState.GAME_OVER);
 		}
 		
-		camera.setX(camera.clamp(getX() - (Game.WIDTH / 2), 0, game.getWorld().getHeight() * TILE_SIZE - Game.WIDTH));
-		camera.setY(camera.clamp(getY() - (Game.HEIGHT / 2), 0, game.getWorld().getWidth() * TILE_SIZE - Game.HEIGHT));
+		camera.setX(camera.clamp(getX() - (Game.WIDTH / 2), 0, game.getWorld().getWidth() * TILE_SIZE - Game.WIDTH));
+		camera.setY(camera.clamp(getY() - (Game.HEIGHT / 2), 0, game.getWorld().getHeight() * TILE_SIZE - Game.HEIGHT));
 	}
 	
 	@Override
