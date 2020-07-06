@@ -4,11 +4,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import me.giverplay.zelda.Game;
 import me.giverplay.zelda.utils.GameState;
 
-public class Listeners implements MouseListener, KeyListener
+public class Listeners implements MouseListener, KeyListener, MouseMotionListener
 {
 	@Override
 	public void keyPressed(KeyEvent event)
@@ -103,25 +104,25 @@ public class Listeners implements MouseListener, KeyListener
 	@Override
 	public void keyTyped(KeyEvent event)
 	{
-
+		
 	}
 	
 	@Override
 	public void mouseClicked(MouseEvent e)
 	{
-
+		
 	}
 	
 	@Override
 	public void mouseEntered(MouseEvent e)
 	{
-
+		
 	}
 	
 	@Override
 	public void mouseExited(MouseEvent e)
 	{
-
+		
 	}
 	
 	@Override
@@ -133,6 +134,19 @@ public class Listeners implements MouseListener, KeyListener
 	@Override
 	public void mouseReleased(MouseEvent e)
 	{
-
+		
+	}
+	
+	@Override
+	public void mouseMoved(MouseEvent e)
+	{
+		
+	}
+	
+	@Override
+	public void mouseDragged(MouseEvent arg0)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 }
