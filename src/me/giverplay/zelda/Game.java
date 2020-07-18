@@ -101,25 +101,13 @@ public class Game extends Canvas implements Runnable
 		game.start();
 	}
 	
-	private void setupFrame()
-	{
-		frame = new JFrame("Game 01 - Zelda Clone");
-		frame.add(this);
-		frame.setResizable(false);
-		frame.setUndecorated(false);
-		frame.pack();
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-	}
-	
 	private void setupAssets()
 	{
+		game = this;
+		
 		listeners = new Listeners();
 		addKeyListener(listeners);
 		addMouseListener(listeners);
-		
-		game = this;
 		
 		random = new Random();
 		camera = new Camera();
@@ -156,6 +144,18 @@ public class Game extends Canvas implements Runnable
 		lightmap.getRGB(0, 0, lightmap.getWidth(), lightmap.getHeight(), lightPixels, 0, lightmap.getWidth());
 		
 		Sound.theme.play();
+	}
+	
+	private void setupFrame()
+	{
+		frame = new JFrame("Game 01 - Zelda Clone");
+		frame.add(this);
+		frame.setResizable(false);
+		frame.setUndecorated(false);
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
 	}
 	
 	// Metodos de Controle do Fluxo | TODO
