@@ -23,7 +23,7 @@ public class Menu
 		g.setColor(Color.YELLOW);
 		g.setFont(FontUtils.getFont(32, Font.BOLD));
 		
-		FontMetrics metrics = g.getFontMetrics(g.getFont());
+		FontMetrics metrics = g.getFontMetrics();
 		
 		int x = (Game.WIDTH * Game.SCALE - metrics.stringWidth("[ O Jogo ]")) / 2;
 		int y = Game.HEIGHT * Game.SCALE / 2 - 50;
