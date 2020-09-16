@@ -297,32 +297,32 @@ public class Game extends Canvas implements Runnable
 		{
 			fs.render(g);
 		}
-		
+
 		//renderLight(g);
 		ui.render(g);
 		
 		/******/
 		
 		g.dispose();
-		g = bs.getDrawGraphics();
-		g.drawImage(image, 0, 0, WIDTH * SCALE, HEIGHT * SCALE, null);
+		Graphics gbs = bs.getDrawGraphics();
+		gbs.drawImage(image, 0, 0, WIDTH * SCALE, HEIGHT * SCALE, null);
 		
 		world.renderMinimap();
-		g.drawImage(map, WIDTH * SCALE - map.getWidth() - 10 - 100, +10, 200, 200, null);
+		gbs.drawImage(map, WIDTH * SCALE - map.getWidth() - 10 - 100, +10, 200, 200, null);
 		
-		renderSmooth(g);
+		renderSmooth(gbs);
 		
 		if(getState() == GameState.GAME_OVER)
 		{
-			Graphics2D g2 = (Graphics2D) g;
+			Graphics2D g2 = (Graphics2D) gbs;
 			
 			g2.setColor(new Color(0, 0, 0, 100));
 			g2.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
 			
 			String txt = "Game Over";
-			g.setColor(Color.WHITE);
-			g.setFont(FontUtils.getFont(32, Font.BOLD));
-			g.drawString(txt, (WIDTH * SCALE - g.getFontMetrics(g.getFont()).stringWidth(txt)) / 2, WIDTH * SCALE / 2);
+			gbs.setColor(Color.WHITE);
+			gbs.setFont(FontUtils.getFont(32, Font.BOLD));
+			gbs.drawString(txt, (WIDTH * SCALE - g.getFontMetrics(gbs.getFont()).stringWidth(txt)) / 2, WIDTH * SCALE / 2);
 			
 			gameOverFrames++;
 			
@@ -334,13 +334,13 @@ public class Game extends Canvas implements Runnable
 			
 			if(showGameOver)
 			{
-				g.setFont(FontUtils.getFont(24, Font.BOLD));
-				g.drawString("> Aperte ENTER para reiniciar <", (WIDTH * SCALE - g.getFontMetrics(g.getFont()).stringWidth("> Aperte ENTER para reiniciar <")) / 2, HEIGHT * SCALE / 2 + 28);
+				gbs.setFont(FontUtils.getFont(24, Font.BOLD));
+				gbs.drawString("> Aperte ENTER para reiniciar <", (WIDTH * SCALE - gbs.getFontMetrics(gbs.getFont()).stringWidth("> Aperte ENTER para reiniciar <")) / 2, HEIGHT * SCALE / 2 + 28);
 			}
 		}
 		else if(getState() == GameState.MENU || getState() == GameState.PAUSED)
 		{
-			menu.render(g);
+			menu.render(gbs);
 		}
 		
 		bs.show();
